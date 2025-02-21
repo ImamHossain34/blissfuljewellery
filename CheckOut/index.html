@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <title>Checkout &#8211; Blissful Jewelleries</title>
+    <link rel="stylesheet" href="checkout.css">
+
+        <!-- loading screen ----START --><style>
+        .spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1); /* Opaque background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1; /* Initially fully visible */
+  visibility: visible; /* Initially visible */
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Add transition for smooth fade */
+}
+
+.lds-ring,
+.lds-ring div {
+  box-sizing: border-box;
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  margin: 8px;
+  border: 4px solid #323333;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #323333 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+     </style><!-- loading screen ----END -->
+
+</head>
+<body>
+    
+    <!-- loading screen--------START -->
+    <div id="loadingSpinner" class="spinner-overlay">
+		<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+	</div>	  
+    <!-- loading screen--------END -->
+
+    <h2 style="font-size:22px;color:#000;width:100%;margin:40px 0 0 0;text-align:center;">ক্যাশ অন ডেলিভারিতে অর্ডার করতে<br> আপনার তথ্য দিন</h2>
+    <div class="container">
+        <div class="logo"><img src="/logos/20240824_233534.jpg" width="135px" onclick="rediHomePage()"></div>
+        <div class="billing">
+          <h2>Billing details</h2>
+          <div></div>
+        </div>
+        <form method="post" onsubmit="return validateForm()" action="https://script.google.com/macros/s/AKfycbz46WZDhV7tzHA5ecqsUd3HzOiGjG8fQ4kHoblC0Y6RS5qqOzNiarxAOqcNLiUpkCBxVA/exec">
+           <div class="firstName">
+               <div style="text-align:left;">
+                 <p class="inputName">আপনার নাম *</p>
+                 <input class="inputForm" id="formName" type="text" name="Name" placeholder="আপনার নাম *">
+               </div>
+               <div></div>
+           </div>
+           <div class="mobile">
+               <div style="text-align:left;">
+                 <p class="inputMobile">মোবাইল নাম্বার *</p>
+                 <input class="inputForm" id="formNumber" type="number" name="Phone no." placeholder="মোবাইল নাম্বার *">
+               </div>
+               <div></div>
+           </div>
+           <div class="address">
+               <div style="text-align:left;">
+                 <p class="inputAddress">আপনার সম্পূর্ণ ঠিকানা *</p>
+                 <input class="inputForm" id="formAddress" type="text" name="Address" placeholder="আপনার সম্পূর্ণ ঠিকানা *">
+               </div>
+               <div></div>
+           </div>
+           <p class="inputIndhkoutdhk">ঢাকার সিটির ভিতরে / ঢাকার সিটির বাহিরে সিলেক্ট করুন *</p>
+           <div class="inoutdhk">
+               <div class="griid" style="text-align:left;">
+                 <div class="griid1">
+                   <input type="radio" id="insidedhk" class="radioBtn" name="Location" value="Inside Dhaka">
+                   <label>ঢাকা সিটির ভিতরে</label>
+                 </div>
+                 <div class="griid2">
+                   <input type="radio" id="outdhk" class="radioBtn" name="Location" value="Outside Dhaka">
+                   <label>ঢাকা সিটির বাহিরে</label>
+                 </div>
+               </div>
+               <div></div>
+           </div>  
+           
+           <div class="hideSubmit">
+              <input type="text" class="getDatafromCookie">
+              <input type="text" class="getDatafromCookie1" name="Product Details">
+              <input type="submit" value="submit" class="submitbtn">
+              <input id="gfg" name="User IP">
+              <input id="gfgTotal" name="Total">
+              <input id="gfgQty" name="Qty">
+              <input id="gfgTime" name="Time">
+              <input type="text" id="deliship" value="">
+              <div class="appnTheCookie"></div>
+              <button><a class="reditothnxpage" href="/thank-you-page/Sr9udjx1J63AAlrdtPf1cEcAbPWnildgF3dxpJymYXvI5-clL-HJPOn-rcD6Sf-3" >linking_thanku</a></button> 
+           </div>                 
+        </form>
+        <p class="pp">Country/Region *<br><b>Bangladesh</b></p>
+        <p class="ppp">Your Order</p>
+        
+        <div class="orders">
+            <div class="product">Product</div>
+            <div class="qty">Qty</div>
+            <div class="subtotal">Subtotal</div>                 
+        </div><hr>
+        
+        <div class="orderProd">
+          <div class="orders01">
+              <div class="imgdata"><img src="./cdn/shop/files/img3.jpeg"></div>
+              <div class="qtyimg">×1</div>
+              <div class="subtotalimg">1250</div>                
+          </div>
+        </div><hr>
+        <div class="orderssub">
+            <div class="productsub">Subtotal</div>
+            <div class="qtysub"></div>
+            <div class="subtotalsub"></div>
+        </div>
+        <div class="orderssub">    
+            <div class="productship">Shipping</div>
+            <div class=""></div>
+            <div class="subtotalship"></div>
+        </div><hr>
+        <div class="orders">
+            <div class="product">Total</div>
+            <div class=""></div>
+            <div class="subtotalTotal"></div>                 
+        </div>
+
+        <center>
+        <button class="cashOnDelivery" onclick="submitForm()">Place Order</button><br><br>
+        আপনার অর্ডার কনফার্ম করতে "Place Order" এ ক্লিক করুন
+        </center>
+    </div>
+    
+    <div class="blkscrnload">
+       <div class="loadingscrn">
+         <p>Processing Your Orders...</p>
+         <img src="./cdn/shop/files/loading..png">
+       </div>
+    </div>
+    
+     
+        <!-- laoding screen ---------START -->
+        <script>
+          window.addEventListener("load", function() {
+    const loadingSpinner = document.getElementById("loadingSpinner");
+    loadingSpinner.style.opacity = "0"; // Fade out the spinner
+    loadingSpinner.style.visibility = "hidden"; // Hide the spinner
+  
+    // Optional: After transition ends, set display to none
+    setTimeout(() => {
+        loadingSpinner.style.display = "none";
+    }, 500); // Match the duration of the CSS transition
+  });
+  
+       </script>
+      <!-- laoding screen ---------END -->
+  
+     
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+
+<script src="checkout.js"></script>
+
+</body>
+</html>
