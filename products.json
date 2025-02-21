@@ -4,31 +4,31 @@
         "name" : "BLUE LUXE CZ CHAIN BRACELET",
         "price" : 5200,
         "sale" : 3800,
-        "mainimage" : "/All-Products-Images/1.png",
-        "link" : "/products/BLUE-LUXE-CZ-CHAIN-BRACELET/"
+        "mainimage" : "/blissfuljewellery/All-Products-Images/1.png",
+        "link" : "/blissfuljewellery/products/BLUE-LUXE-CZ-CHAIN-BRACELET/"
     },
     {
         "id" : 102,
         "name" : "BLUE LUXE CZ CHAIN BRACELET 1",
         "price" : 4200,
         "sale" : 4000,
-        "mainimage" : "/All-Products-Images/5.png",
-        "link" : "/Products/BLUE-LUXE-CZ-CHAIN-BRACELET01"
+        "mainimage" : "/blissfuljewellery/All-Products-Images/5.png",
+        "link" : "/blissfuljewellery/Products/BLUE-LUXE-CZ-CHAIN-BRACELET01"
     },
     {
         "id" : 103,
         "name" : "BLUE LUXE CZ CHAIN BRACELET 2",
         "price" : 4200,
         "sale" : 3800,
-        "mainimage" : "/All-Products-Images/6.png",
-        "link" : "/products/BLUE-LUXE-CZ-CHAIN-BRACELET02/"
+        "mainimage" : "/blissfuljewellery/All-Products-Images/6.png",
+        "link" : "/blissfuljewellery/products/BLUE-LUXE-CZ-CHAIN-BRACELET02/"
     },
     {
         "id" : 104,
         "name" : "BLUE LUXE CZ CHAIN BRACELET 3",
         "price" : 4200,
         "sale" : 3800,
-        "mainimage" : "/All-Products-Images/7.png",
+        "mainimage" : "/blissfuljewellery/All-Products-Images/7.png",
         "link" : ""
     },
     {
@@ -36,7 +36,7 @@
         "name" : "BLUE LUXE CZ CHAIN BRACELET 4",
         "price" : 4200,
         "sale" : 3800,
-        "mainimage" : "/All-Products-Images/8.png",
+        "mainimage" : "/blissfuljewellery/All-Products-Images/8.png",
         "link" : ""
     },
     {
@@ -44,7 +44,7 @@
         "name" : "BLUE LUXE CZ CHAIN BRACELET 5",
         "price" : 4200,
         "sale" : 3800,
-        "mainimage" : "/All-Products-Images/9.png",
+        "mainimage" : "/blissfuljewellery/All-Products-Images/9.png",
         "link" : ""
     },
     {
@@ -52,7 +52,7 @@
         "name" : "BLUE LUXE CZ CHAIN BRACELET 6",
         "price" : 4200,
         "sale" : 3800,
-        "mainimage" : "/All-Products-Images/10.png",
+        "mainimage" : "/blissfuljewellery/All-Products-Images/10.png",
         "link" : ""
     },
     {
@@ -60,7 +60,7 @@
         "name" : "BLUE LUXE CZ CHAIN BRACELET 7",
         "price" : 4200,
         "sale" : 3800,
-        "mainimage" : "/All-Products-Images/11.png",
+        "mainimage" : "/blissfuljewellery/All-Products-Images/11.png",
         "link" : ""
     },
     {
@@ -68,7 +68,7 @@
         "name" : "BLUE LUXE CZ CHAIN BRACELET 8",
         "price" : 4200,
         "sale" : 3800,
-        "mainimage" : "/All-Products-Images/12.png",
+        "mainimage" : "/blissfuljewellery/All-Products-Images/12.png",
         "link" : ""
     },
     {
@@ -76,7 +76,7 @@
         "name" : "BLUE LUXE CZ CHAIN BRACELET 9",
         "price" : 4200,
         "sale" : 3800,
-        "mainimage" : "/All-Products-Images/13.png",
+        "mainimage" : "/blissfuljewellery/All-Products-Images/13.png",
         "link" : ""
     }
 ]
