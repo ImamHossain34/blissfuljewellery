@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank you for shopping with is!</title>
+
+    <style>
+        @font-face {
+  font-family: 'twentieth century';
+  src: url("/fonts/TwentiethCenturyforKenmoreSemibold.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'twentieth century-light';
+  src: url("/fonts/TwentiethCenturyforKenmoreMedium.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'twentieth century-e-light';
+  src: url("/fonts/TwentiethCenturyforKenmoreLight.ttf") format('truetype');
+}
+        body {
+            opacity: 0;
+        }
+
+        .logothx img {
+            width: 190px;
+            cursor: pointer;
+        }
+
+        .logothx {
+            margin: 70px 0 0 0;
+            display: flex;
+            justify-content: center;
+            /* transition: 1s; */
+        }
+        .thankyoutextsuccess {
+            margin: 15px 0 0 0;
+            text-align: center;
+            font-size: 40px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: rgb(90, 163, 103);
+            font-family: 'twentieth century-e-light',sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .thankyoutextsuccess .smile {
+          font-size: 50px;
+          margin: 0 0 8px 0;
+        }
+        .thankyoutext {
+            margin: 15px 0 0 0;
+            text-align: center;
+            font-size: 27px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: rgb(75, 75, 75);
+            font-family: 'twentieth century-e-light',sans-serif;
+        }
+        .thankyoutext2 {
+            margin: 15px 0 0 0;
+            text-align: center;
+            font-size: 16px;
+            /* font-weight: 600; */
+            letter-spacing: 1.5px;
+            color: rgb(75, 75, 75);
+            font-family: 'twentieth century-e-light',sans-serif;
+        }
+
+        .keepshopping {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 25px 0 0 0;
+        }
+        .keepshopping a {
+            height: 20px;
+            padding: 10px 28px 12px 28px;
+            color: aliceblue;
+            text-decoration: none;
+            font-family: 'twentieth century-e-light',sans-serif;
+            letter-spacing: 2px;
+            font-weight: 600;
+            text-transform: capitalize;
+            font-size: 20px;
+            border-radius: 22px;
+            transition: .2s;
+            background: #fc00ff;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #00dbde, #fc00ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            cursor: default;
+        }
+
+        .keepshopping a:active {
+            margin: 1px 0 0 0;
+            background: #833ab4;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="logothx"><a class="datalinkhref-logo" href=""><img src="/logos/20240824_233534.jpg" alt=""></a></div>
+    <div class="thankyoutextsuccess"><div class="sccess">SUCCESS</div><div class="smile">☺</div></div>
+    <div class="thankyoutext">Thank you for shopping with us!</div>
+    <div class="thankyoutext2">Your order has been successfully received! We will call you to confirm the orders.</div>
+    <div class="keepshopping"><a href="/">Keep Shopping</a></div>
+
+
+    <script>
+window.onload = function() {
+    document.querySelector('.logothx').style = 'margin: 0px 0 0 0; transition: margin 1s ease;';
+    document.body.style = 'opacity: 1; transition: opacity 1s ease;';
+};
+
+
+  // Fetch JSON data from a local file
+  fetch('/social-media-links-and-numbers-and-logos.json')
+    .then(response => response.json())
+    .then(data => {
+      // Assuming the data is an array with one object
+      const contactInfo = data[0];
+
+      if (contactInfo.logoLink) {
+        document.querySelector('.datalinkhref-logo').href = contactInfo.logoLink;
+      }
+
+      if (contactInfo.logoImage) {
+        document.querySelector('.logothx img').src = contactInfo.logoImage;
+      }
+
+      // Function to update anchor with href and target="_blank"
+      // function updateAnchor(selector, url) {
+      //   if (url) {
+      //     const anchor = document.querySelector(selector);
+      //     anchor.href = url;
+      //     anchor.target = "_blank"; // Open in a new tab
+      //   }
+      // }
+
+      // // Update anchor elements with the contact info and target blank
+      // updateAnchor('.datalinkhref-whatsapp', contactInfo.whatsapp);
+      // updateAnchor('.datalinkhref-fixed-whatsapp', contactInfo.whatsapp);
+      // updateAnchor('.datalinkhref-imo', contactInfo.imo);
+      // updateAnchor('.datalinkhref-number', contactInfo.phone);
+      // updateAnchor('.datalinkhref-facebook', contactInfo.facebook);
+      // updateAnchor('.datalinkhref-facebook-svg', contactInfo.facebook);
+      // updateAnchor('.datalinkhref-instagram', contactInfo.instagram);
+      // updateAnchor('.datalinkhref-instagram-svg', contactInfo.instagram);
+      // updateAnchor('.datalinkhref-twitter', contactInfo.twitter);
+      // updateAnchor('.datalinkhref-twitter-svg', contactInfo.twitter);
+
+
+    })
+    .catch(error => {
+      console.error('Error fetching contact data:', error);
+    });
+
+    </script>
+</body>
+</html>

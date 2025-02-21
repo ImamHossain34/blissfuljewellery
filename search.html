@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Search with Animation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .search-container {
+            position: relative;
+            width: 350px;
+            display: flex;
+            align-items: center;
+        }
+        .search-input {
+            width: 0;
+            padding: 12px 0;
+            /* border: 2px solid #333; */
+            /* border-radius: 25px; */
+            font-size: 16px;
+            outline: none;
+            transition: width 0.5s ease-in-out, padding 0.5s ease-in-out;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .search-container.active .search-input {
+            width: 100%;
+            padding: 12px 15px;
+            opacity: 1;
+            visibility: visible;
+        }
+        .search-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .search-button svg {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: #333;
+            stroke-width: 2;
+        }
+        .dropdown {
+            position: absolute;
+            top: 110%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ddd;
+            /* border-radius: 10px; */
+            max-height: 300px;
+            overflow-y: auto;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .dropdown::-webkit-scrollbar {
+            width: 0;
+        }
+        .dropdown {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            text-decoration: none;
+            color: #333;
+        }
+        .dropdown-item:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+        .dropdown-item img {
+            width: 56px;
+            /* height: 60px; */
+            margin-right: 10px;
+        }
+        .dropdown-item .product-info {
+            flex: 1;
+        }
+        .product-name {
+            font-size: 14px;
+            font-weight: thin;
+            margin: 0;
+            color: #000;
+            text-transform: capitalize;
+        }
+        .product-price {
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="search-container">
+        <button class="search-button" onclick="toggleSearch()">
+            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"></path></svg>
+        </button>
+        <input type="text" class="search-input" placeholder="Search products..." id="searchInput" onkeyup="filterProducts()">
+        <div class="dropdown" id="dropdownMenu"></div>
+    </div>
+
+    <script>
+        let products = [];
+
+        // Load product data from products.json
+        async function loadProducts() {
+            try {
+                const response = await fetch('products.json');
+                products = await response.json();
+            } catch (error) {
+                console.error('Error loading products:', error);
+            }
+        }
+
+        loadProducts();
+
+        const dropdownMenu = document.getElementById("dropdownMenu");
+
+        function toggleSearch() {
+            document.querySelector('.search-container').classList.toggle('active');
+        }
+
+        function filterProducts() {
+            const searchValue = document.getElementById("searchInput").value.toLowerCase();
+            dropdownMenu.innerHTML = '';
+            if (searchValue) {
+                const filteredProducts = products.filter(product => 
+                    product.name.toLowerCase().includes(searchValue) || product.id.toString().includes(searchValue)
+                );
+                
+                if (filteredProducts.length > 0) {
+                    filteredProducts.forEach(product => {
+                        const item = document.createElement('a');
+                        item.classList.add('dropdown-item');
+                        item.href = product.link || '#';
+                        item.innerHTML = `
+                            <img src="${product.mainimage}" alt="${product.name}">
+                            <div class="product-info">
+                                <p class="product-name">${product.name}</p>
+                                <p class="product-price">Price: ₹${product.price} <span style="color: red;">Sale: ₹${product.sale}</span></p>
+                            </div>
+                        `;
+                        dropdownMenu.appendChild(item);
+                    });
+                } else {
+                    dropdownMenu.innerHTML = '<p>No products found.</p>';
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
