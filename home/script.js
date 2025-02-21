@@ -123,7 +123,7 @@ let productContainerListing = document.querySelector('.listing-product');
 
 
  let products = null;
- fetch('/products.json')
+ fetch('/blissfuljewellery/products.json')
  .then(response => response.json())
  .then(data => {
    products = data;
